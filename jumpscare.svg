@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0%" stop-color="#0a0000"/>
+      <stop offset="100%" stop-color="#200000"/>
+    </linearGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="12" result="b"/>
+      <feMerge>
+        <feMergeNode in="b"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#bg)"/>
+  <!-- Subtle vignette -->
+  <radialGradient id="v" cx="50%" cy="50%" r="70%">
+    <stop offset="70%" stop-color="#000" stop-opacity="0"/>
+    <stop offset="100%" stop-color="#000" stop-opacity="0.9"/>
+  </radialGradient>
+  <rect width="100%" height="100%" fill="url(#v)"/>
+
+  <!-- Eyes -->
+  <g filter="url(#glow)">
+    <ellipse cx="740" cy="480" rx="120" ry="80" fill="#ffffff"/>
+    <ellipse cx="1180" cy="480" rx="120" ry="80" fill="#ffffff"/>
+    <circle cx="770" cy="480" r="38" fill="#000"/>
+    <circle cx="1150" cy="480" r="38" fill="#000"/>
+  </g>
+
+  <!-- Mouth -->
+  <path d="M640 740 Q960 900 1280 740" fill="none" stroke="#b30000" stroke-width="22" stroke-linecap="round"/>
+
+  <!-- Blood drips -->
+  <g fill="#8b0000" opacity="0.85">
+    <rect x="950" y="740" width="12" height="120" rx="6"/>
+    <rect x="990" y="740" width="8" height="90" rx="4"/>
+    <rect x="920" y="740" width="6" height="70" rx="3"/>
+  </g>
+</svg>
